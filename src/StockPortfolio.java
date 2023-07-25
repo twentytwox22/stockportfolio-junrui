@@ -1,21 +1,21 @@
 import java.util.HashMap;
+import java.util.Map;
+
 public class StockPortfolio {
+    static HashMap<Stock, Integer> portfolio = new HashMap<>();
 
-    //represents the collection of stocks and allows users to add
-    // stocks to their portfolio and view the portfolio's holdings with
-    // their respective quantities, prices, and total values.
-
-    static HashMap<Stock, Integer> portfolio = new HashMap<Stock, Integer>();
-
-    public static void viewPortfolio(){
-        System.out.println("Portfolio Value:" + totalValue());
-        for (Stock i : portfolio.keySet()) {
-            System.out.println("stock name: " + i.getName() + "\n"+"stocks owned: " + portfolio.get(i));
+    public static void viewPortfolio() {
+        System.out.println("Portfolio Value:" + totalValue() +"\n");
+        for (Stock stock : portfolio.keySet()) {
+            System.out.println("stock name: " + stock.getName() + " ["+ stock.getTicker() +"]" + "\n" + "stocks owned: " + portfolio.get(stock)
+                    + "\n" + "stock value: " + stock.getPrice() * portfolio.get(stock) +"\n");
         }
     }
-    public static int totalValue() {
-        int value = 0;
-        // code that returns totalvalue
+    public static double totalValue() {
+        double value = 0;
+        for (Stock stock : portfolio.keySet()) {
+           value +=  stock.getPrice() * portfolio.get(stock);
+        }
         return value;
     }
 

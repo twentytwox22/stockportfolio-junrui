@@ -12,7 +12,7 @@ public class Main {
         portfolio.put(stock1, 10);
         portfolio.put(stock2, 5);
         portfolio.put(stock3, 20);
-        
+
         portfolio.viewPortfolio();
 
         scanner.close();
