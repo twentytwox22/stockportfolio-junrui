@@ -9,10 +9,10 @@ public class Main {
         Stock stock2 = new Stock("GOOGL", "Alphabet Inc.", 2750.50);
         Stock stock3 = new Stock("TSLA", "Tesla Corporation", 305.75);
 
-        portfolio.addStock(stock1, 10);
-        portfolio.addStock(stock2, 5);
-        portfolio.addStock(stock3, 20);
-
+        portfolio.put(stock1, 10);
+        portfolio.put(stock2, 5);
+        portfolio.put(stock3, 20);
+        
         portfolio.viewPortfolio();
 
         scanner.close();
